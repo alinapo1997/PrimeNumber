@@ -10,13 +10,15 @@ namespace PrimeNumber
             int unknownNumber = int.Parse(Console.ReadLine());
             Console.WriteLine("___________________START___________________");
             bool isSimple = true;
-            int i = 1;
-            while (i < unknownNumber)
-            {                 
-                int remainder = unknownNumber % i;                
-                if (i != 1 && remainder == 0)
+            int i = 2;
+            int end = (int)Math.Ceiling((Math.Sqrt(unknownNumber)));              
+            while (i < end)
+            {
+                Console.WriteLine(i);                              
+                if (unknownNumber % i == 0)
                 {
-                    isSimple = false;                 
+                    isSimple = false;                    
+                    break;
                 }
                 i++;            
             }
